@@ -1,0 +1,252 @@
+@import "tailwindcss";
+
+/* Dark mode follows data-theme on <html> (set by useTheme and the inline script in index.html). */
+@custom-variant dark (&:where([data-theme="dark"], [data-theme="dark"] *));
+
+/* ================= Branding Tokens (Specification v1.0) ================= */
+:root {
+  --brand-navy-900: #152337;
+  --brand-navy-800: #1A2C47;
+  --brand-blue-600: #144074;
+  --brand-blue-400: #2D79A6;
+  --brand-cyan-300: #00CCFF;
+  --brand-teal-400: #23E3BA;
+  --brand-teal-600: #03B7B7;
+  --brand-purple-700: #2E039B;
+  --brand-purple-300: #B175FF;
+  --brand-blue-200: #78A0F6;
+  --neutral-200: #E8E8E8;
+  --neutral-0: #FFFFFF;
+  --status-draft: #8A8F98;
+  --status-success: #1FAE5C;
+  --status-pending: #B8BCC4;
+  --status-failed: #D64545;
+  --status-ready-to-deploy: #03B7B7;
+  --medallion-bronze: #B8722C;
+  --medallion-silver: #8A93A3;
+  --medallion-gold: #D4A72C;
+  --font-family-base: "Montserrat", "Helvetica Neue", Arial, sans-serif;
+  --surface-radius-card: 8px;
+  --border-width-default: 1px;
+}
+
+:root,
+:root[data-theme="light"] {
+  color-scheme: light;
+  --bg: #f4f6fa;
+  --panel: #ffffff;
+  --text: #152337;
+  --muted: #677387;
+  --border: #e8e8e8;
+  --accent: #144074;          /* brand-blue-600 for primary actions */
+  --accent-soft: #e8eff6;
+  --good: #1FAE5C;            /* semantic green */
+  --good-soft: #e4f7ed;
+  --bad: #D64545;             /* error red */
+  --bad-soft: #fceaea;
+  --warn: #2D79A6;            /* in progress / warn */
+  --warn-soft: #e8f3f9;
+  --code-bg: #f0f3f8;
+  --shadow: 0 1px 3px rgba(21, 35, 55, .06), 0 4px 14px rgba(21, 35, 55, .04);
+  --on-color: #ffffff;
+
+  /* Persistent Navy Sidebar */
+  --nav-bg: #152337;          /* brand-navy-900 */
+  --nav-card: #1A2C47;        /* brand-navy-800 */
+  --nav-text: #d2dbec;
+  --nav-strong: #ffffff;
+  --nav-muted: #8A93A3;
+  --nav-line: #22344e;
+  --nav-mark: #1A2C47;
+
+  /* Medallion layer colors */
+  --bronze: #B8722C; --bronze-soft: #fbf2eb;
+  --silver: #8A93A3; --silver-soft: #f0f2f5;
+  --gold: #D4A72C; --gold-soft: #fdf8e9;
+  --orch: #144074; --orch-soft: #e8eff6;
+  --semantic: #03B7B7; --semantic-soft: #e6f8f8;
+  --profile: #2D79A6; --profile-soft: #e8f3f9;
+  --source: #1A2C47; --source-soft: #e8ecf2;
+}
+
+:root[data-theme="dark"] {
+  color-scheme: dark;
+  --bg: #0d1624;
+  --panel: #152337;
+  --text: #e8ecf5;
+  --muted: #8A93A3;
+  --border: #22344e;
+  --accent: #2D79A6;          /* brand-blue-400 */
+  --accent-soft: #1A2C47;
+  --good: #23E3BA;            /* brand-teal-400 */
+  --good-soft: #10332c;
+  --bad: #D64545;
+  --bad-soft: #381a1f;
+  --warn: #03B7B7;
+  --warn-soft: #133338;
+  --code-bg: #101c2e;
+  --shadow: none;
+  --on-color: #0d1624;
+
+  --nav-bg: #152337;
+  --nav-card: #1A2C47;
+  --nav-text: #c9d4e5;
+  --nav-strong: #ffffff;
+  --nav-muted: #8A93A3;
+  --nav-line: #22344e;
+  --nav-mark: #1A2C47;
+
+  --bronze: #d9914b; --bronze-soft: #38261a;
+  --silver: #8A93A3; --silver-soft: #272e38;
+  --gold: #e5ba42; --gold-soft: #393013;
+  --orch: #78A0F6; --orch-soft: #1e2e4e;
+  --semantic: #23E3BA; --semantic-soft: #133633;
+  --profile: #2D79A6; --profile-soft: #162f45;
+  --source: #8A93A3; --source-soft: #1d2739;
+}
+
+.bronze { --c: var(--bronze); --cs: var(--bronze-soft); }
+.silver { --c: var(--silver); --cs: var(--silver-soft); }
+.gold { --c: var(--gold); --cs: var(--gold-soft); }
+.orch { --c: var(--orch); --cs: var(--orch-soft); }
+.semantic { --c: var(--semantic); --cs: var(--semantic-soft); }
+.profile { --c: var(--profile); --cs: var(--profile-soft); }
+.source { --c: var(--source); --cs: var(--source-soft); }
+.finish { --c: var(--good); --cs: var(--good-soft); }
+.accent { --c: var(--accent); --cs: var(--accent-soft); }
+
+@theme inline {
+  --font-sans: "Montserrat", "Helvetica Neue", Arial, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, monospace;
+  --shadow-card: var(--shadow);
+
+  --color-bg: var(--bg);
+  --color-panel: var(--panel);
+  --color-ink: var(--text);
+  --color-muted: var(--muted);
+  --color-line: var(--border);
+  --color-code: var(--code-bg);
+  --color-on-color: var(--on-color);
+  --color-accent: var(--accent);
+  --color-accent-soft: var(--accent-soft);
+  --color-good: var(--good);
+  --color-good-soft: var(--good-soft);
+  --color-bad: var(--bad);
+  --color-bad-soft: var(--bad-soft);
+  --color-warn: var(--warn);
+  --color-warn-soft: var(--warn-soft);
+
+  --color-nav: var(--nav-bg);
+  --color-nav-card: var(--nav-card);
+  --color-nav-ink: var(--nav-text);
+  --color-nav-strong: var(--nav-strong);
+  --color-nav-muted: var(--nav-muted);
+  --color-nav-line: var(--nav-line);
+  --color-nav-mark: var(--nav-mark);
+
+  --color-bronze: var(--bronze);
+  --color-bronze-soft: var(--bronze-soft);
+  --color-silver: var(--silver);
+  --color-silver-soft: var(--silver-soft);
+  --color-gold: var(--gold);
+  --color-gold-soft: var(--gold-soft);
+  --color-orch: var(--orch);
+  --color-orch-soft: var(--orch-soft);
+  --color-semantic: var(--semantic);
+  --color-semantic-soft: var(--semantic-soft);
+  --color-profile: var(--profile);
+  --color-profile-soft: var(--profile-soft);
+  --color-source: var(--source);
+  --color-source-soft: var(--source-soft);
+  --color-layer: var(--c, var(--accent));
+  --color-layer-soft: var(--cs, var(--accent-soft));
+
+  --animate-glow: glow 1.6s ease-in-out infinite;
+  --animate-shimmer: shimmer 1.2s linear infinite;
+  --animate-blink: blink 1.4s ease-in-out infinite;
+
+  @keyframes glow { 50% { box-shadow: 0 0 0 5px var(--cs, var(--accent-soft)); } }
+  @keyframes shimmer { to { background-position: -200% 0; } }
+  @keyframes blink { 50% { opacity: .35; } }
+}
+
+@layer base {
+  html, body, #root { height: 100%; margin: 0; overflow: hidden; }
+  body { @apply bg-bg font-sans text-[14px] leading-relaxed text-ink antialiased; -webkit-text-size-adjust: 100%; }
+  h1, h2, h3, h4, h5, h6 { font-weight: 500; }
+  code, pre { @apply font-mono text-[12.5px]; }
+  a { @apply text-accent; }
+  button { -webkit-tap-highlight-color: transparent; }
+}
+
+@layer components {
+  .skeleton { @apply animate-shimmer rounded-lg bg-[linear-gradient(90deg,var(--code-bg),var(--border),var(--code-bg))] bg-[length:200%_100%]; }
+
+  /* Claude's Markdown output */
+  .md { overflow-wrap: anywhere; }
+  .md > :first-child { margin-top: 0; }
+  .md > :last-child { margin-bottom: 0; }
+  .md p { margin: 0 0 10px; }
+  .md h1, .md h2, .md h3, .md h4 { font-size: 15px; font-weight: 600; margin: 14px 0 8px; }
+  .md ul, .md ol { padding-left: 22px; margin: 0 0 10px; }
+  .md ul { list-style: disc; }
+  .md ol { list-style: decimal; }
+  .md strong { font-weight: 600; }
+  .md table { border-collapse: collapse; margin: 10px 0; font-size: 13px; display: block; overflow-x: auto; max-width: 100%; }
+  .md th, .md td { border: 1px solid var(--border); padding: 5px 10px; text-align: left; vertical-align: top; }
+  .md th { background: var(--code-bg); font-weight: 600; }
+  .md code { background: var(--code-bg); padding: 1px 5px; border-radius: 4px; }
+  .md pre { background: var(--code-bg); border: 1px solid var(--border); padding: 12px; border-radius: 10px; overflow-x: auto; max-height: 460px; margin: 0 0 10px; }
+  .md pre code { background: none; padding: 0; }
+  .md blockquote { margin: 8px 0; padding: 6px 12px; border-left: 3px solid var(--accent); background: var(--accent-soft); border-radius: 0 8px 8px 0; }
+  .md hr { border: 0; border-top: 1px solid var(--border); margin: 12px 0; }
+}
+
+/* Fast, sleek scrollbars across all browsers (WebKit, Chromium, Edge, Firefox) */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: color-mix(in srgb, var(--border) 85%, transparent);
+  border-radius: 9999px;
+  transition: background 0.15s ease;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--muted);
+}
+
+::-webkit-scrollbar-corner {
+  background: transparent;
+}
+
+/* Sidenav-specific sleek dark scrollbar */
+.sidenav::-webkit-scrollbar-thumb {
+  background: var(--nav-line);
+}
+
+.sidenav::-webkit-scrollbar-thumb:hover {
+  background: var(--nav-muted);
+}
+
+/* Firefox / standard scrollbar */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: color-mix(in srgb, var(--border) 80%, transparent) transparent;
+}
+
+.sidenav {
+  scrollbar-color: var(--nav-line) transparent;
+}
+
+/* Eliminate sluggish wheel drag and enable instant, responsive scrolling */
+html, body, [class*="overflow-y-auto"], [class*="overflow-x-auto"], [class*="overflow-auto"] {
+  scroll-behavior: auto !important;
+  -webkit-overflow-scrolling: touch;
+}

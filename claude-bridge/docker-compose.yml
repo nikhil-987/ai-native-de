@@ -1,0 +1,21 @@
+version: '3.8'
+
+services:
+  studio:
+    build: .
+    container_name: fabric-de-studio
+    ports:
+      - "8000:8000"
+    environment:
+      - HOST=0.0.0.0
+      - PORT=8000
+      - MCP_CLAUDE_DIR=/mcp-claude
+      - FABRIC_MCP_DIR=/fabric-mcp-server
+    volumes:
+      # Mount the mcp-claude medallion skills directory
+      - ../mcp-claude:/mcp-claude:ro
+      # Mount the fabric-mcp-server repository
+      - ../fabric-mcp-server:/fabric-mcp-server:ro
+      # Mount Azure CLI authentication credentials from host
+      - ~/.azure:/root/.azure:ro
+    restart: unless-stopped

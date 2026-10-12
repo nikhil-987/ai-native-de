@@ -1,0 +1,90 @@
+CAREER EVIDENCE INTERVIEW FORM
+Stage 1: Professional Positioning & Summary
+================================================================================
+
+Purpose:
+Establish the career narrative you want the resume to communicate: modern data engineering, enterprise integration, data platform capability, and architecture potential.
+
+Q1. Career positioning
+Question: How would you describe your current professional identity in one or two sentences? What do you want recruiters to see you as?
+Answer:
+Currently I am a Data Engineer, who mostly uses Talend studio for delivering solutions for the client projects and has medium level expertise in SQL and data engineering concepts. I am certified in Microsoft Fabric platform, have hands on experience with Data Build Tool and has basic understanding of Snowflake and Databricks. I also have and understanding around AI enabled data engineering and has used Fabric MCP for this.
+
+--------------------------------------------------------------------------------
+
+Q2. Problems you solve
+Question: What recurring business or engineering problems do you solve through data engineering?
+Answer:
+As a data engineer, I work on the data migration projects using Talend for the client to transfer the marine insurance related data from different source systems to the Dynamics CRM so that it can be used in Power Apps based solutions. I have also worked on data engineering projects using Microsoft Fabric and Data Build tool.  I have also used Microsoft Fabric MCP with Antigravity to create medallion architecture notebooks and orchestrator pipeline for the data files as input.
+
+--------------------------------------------------------------------------------
+
+Q3. Architecture exposure
+Question: What architecture or design decisions have you personally participated in? Describe the situation, your contribution, and the decision made.
+Answer:
+I have participated in the ARG review meetings as a Talend consultant for presenting the architecture revamp of the existing Talend project. The existing Talend project faced execution delays and resulted in latency in transferring the data to the Dynamics CRM. I performed thorough analysis of the entire project and identified around five areas of changes and improvements, designed the modern architecture for these improvement areas. the modern architecture was well accepted by the clients considering the major problems that it would solve and also that it would greatly reduce the latency in data transfer.
+
+--------------------------------------------------------------------------------
+
+Q4. Modernization
+Question: What data-platform or integration modernization work have you performed? What was the old approach, what changed, and why?
+Answer:
+I have worked on multiple projects which relate to data platform modernization work. For the marine insurance project, there were multiple old approaches. Data extraction from CRM used native Talend components and this caused slowness in data extraction, the native CRM components are now replaced by database input components which extract the data from the CRM using Tabular Data Stream and SQL endpoint, and now data can be extracted easily and faster. The sensitive database credentials were placed in Excel based configuration files and used by the Talend jobs due to which the databases were not secure, instead of the Excel configs now the Talend jobs are integrated with Azure Key Vault to dynamically fetch the credentials from them which has made the databases more secure.
+
+--------------------------------------------------------------------------------
+
+Q5. Impact
+Question: What are your strongest measurable outcomes? Include data volume, records, pipelines, users/consumers, environments, accuracy, performance, reliability, cost, or effort improvements.
+Answer:
+Account Management Programme for Marine Insurance
+•	Modernized legacy data integration workflows across 10+ business entities and 19 Talend jobs, addressing frequent failures, duplicate processing, slow execution, manual intervention, and maintainability challenges within a 5-environment enterprise integration landscape. 
+•	Engineered incremental ingestion pipelines to process only new or changed insurance policy and quotation records, avoiding unnecessary full-load processing and supporting 500+ insurance policy records daily. 
+•	Redesigned ETL execution using reusable master-job and child-job frameworks, loading shared context variables once and passing them to downstream jobs instead of repeatedly initializing each job, reducing redundant context-variable loading by approximately 70%. 
+•	Participated in architecture and design decisions for data extraction modernization, including the adoption of TDS-based querying to improve CRM data retrieval performance and support more efficient integration workflows. 
+•	Improved production reliability by addressing network failures, timeouts, and environment/configuration issues and optimizing extraction and execution workflows, contributing to approximately 35% fewer ETL rerun incidents. 
+•	Supported production operations across 5 environments, resolving 90%+ of production issues within agreed SLA timelines and reducing disruption to daily data integration processes. 
+Data Integration & Migration for Marine Insurance
+•	Engineered 5 Talend integration jobs connecting 3 source databases to 2 target databases, including Dynamics CRM, supporting enterprise data migration across 20+ source-to-target mappings. 
+•	Participated in modernization of the source-to-target integration architecture, using TDS for efficient CRM data querying and REST APIs for writing data to Dynamics CRM. 
+•	Optimized extraction across 5+ business entities by selecting only required columns, consolidating similar queries, filtering result sets, and reducing unnecessary data retrieval, contributing to approximately 50% faster job execution. 
+•	Introduced caching of reusable query results and input data to avoid repeated retrieval of relatively stable data, reducing unnecessary database/API calls during pipeline execution. 
+•	Engineered reusable master-job frameworks to eliminate repeated context initialization across integration jobs, improving execution efficiency and maintainability while reducing redundant context loading by approximately 70%. 
+•	Strengthened data security by replacing plaintext/configuration-based credential handling with centralized Azure Key Vault access through REST APIs, addressing insecure credential storage and improving centralized secret management. 
+•	Supported integration workflows across 5 environments and contributed to evaluation of GitHub–TMC deployment integration as a POC for source control and deployment/scheduling requirements; this POC should not be represented as a production CI/CD implementation. 
+•	Developed a centralized logging POC using Talend APIs to address scattered job logs and inconsistent formats, enabling centralized retrieval of job status, error messages, and execution timestamps. The solution was not promoted to production. 
+Quotation Progression Reporting
+•	Managed recurring monthly data pipelines using MySQL on AWS to support quotation progression reporting and consistent delivery of insurance reporting data. 
+•	Maintained and validated 12+ months of historical reporting data to preserve reporting continuity and support comparison of insurance policy trends over time. 
+•	Refactored 15+ ETL jobs by removing redundant components and legacy database dependencies, supporting the planned decommissioning of the underlying database infrastructure. 
+•	Simplified ETL workflows to improve maintainability and reduce dependencies on legacy database components while maintaining required reporting outputs. 
+•	Coordinated with business stakeholders to validate and deliver recurring monthly reporting outputs within required timelines. 
+Data Migration & Reconciliation
+•	Engineered source-to-target reconciliation processes using SQL Server to validate 50+ data attributes and ensure migrated data complied with defined business rules and validation requirements. 
+•	Automated migration validation using SQL, Python, and Excel, replacing repetitive manual comparisons with repeatable extraction, automated validation, and exception-review workflows. 
+•	Validated 300,000+ migrated records representing 6+ GB of data across source and target systems, achieving 99.9%+ data accuracy. 
+•	Reduced manual reconciliation effort by approximately 60%, improving the speed and consistency of migration-quality validation. 
+ADROSONIC | Jan 2023 – Jun 2023
+Software Engineer Intern
+Mumbai, Maharashtra
+•	Supported production data operations using Riversand and Syndigo PIM platforms, resolving daily operational and data-related issues. 
+•	Applied Microsoft Power Query and Azure Data Factory to support foundational ETL and data transformation workflows. 
+•	Completed structured training in Talend Studio, Talend Management Console, and Talend APIs, transitioning into live project support within six months. 
+•	Built foundational experience in SQL, cloud-based ETL, data integration, and data governance through structured training and project implementation. 
+
+
+--------------------------------------------------------------------------------
+
+Q6. Career narrative
+Question: How has your career progressed from your earliest role to your current role? What capabilities were added at each stage?
+Answer:
+Earlier when I was a trainee I learnt the basics of master data management using Syndigo and worked on project support related tasks. then over the years i have developed so many capabilities and learnt data engineeering concepts across different projects. through the projects I learnt talend, azure data factory, ms excel, microsoft fabric, databricks, pyspark, snowflake, dbt etc.
+
+--------------------------------------------------------------------------------
+
+Q7. Target role
+Question: What role(s) are you targeting next: Senior Data Engineer, Data Platform Engineer, Data Engineering Architect, Data Architect, or another role? Why?
+Answer:
+I am targeting for the Senior data engineer role because now I have great understanding of the data engineering concepts, data engineering tools, data architectures and also have SQL expertise. 
+
+--------------------------------------------------------------------------------
+
